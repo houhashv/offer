@@ -55,3 +55,53 @@ def create_data_engineer() -> Agent:
         model=Config.LLM_MODEL,
         instructions=prompt_data["instructions"],
     )
+
+
+# ─── Business-role specialists (added 2026-05-03) ──────────────────────
+
+def create_legal_counsel() -> Agent:
+    """Legal Counsel — NDA / contracts / IP / compliance."""
+    prompt_data = Config.get_staff_prompt("legal_counsel")
+    return Agent(name="LegalCounsel", model=Config.LLM_MODEL, instructions=prompt_data["instructions"])
+
+
+def create_cfo() -> Agent:
+    """CFO — pricing / NPV / cost-to-serve."""
+    prompt_data = Config.get_staff_prompt("cfo")
+    return Agent(name="CFO", model=Config.LLM_MODEL, instructions=prompt_data["instructions"])
+
+
+def create_rnd_director() -> Agent:
+    """R&D Director — methodology / experiments / quality."""
+    prompt_data = Config.get_staff_prompt("rnd_director")
+    return Agent(name="RnDDirector", model=Config.LLM_MODEL, instructions=prompt_data["instructions"])
+
+
+def create_sales_director() -> Agent:
+    """Sales Director — positioning / offer tiers / BATNA."""
+    prompt_data = Config.get_staff_prompt("sales_director")
+    return Agent(name="SalesDirector", model=Config.LLM_MODEL, instructions=prompt_data["instructions"])
+
+
+def create_cto() -> Agent:
+    """CTO — system architecture / IS strategy."""
+    prompt_data = Config.get_staff_prompt("cto")
+    return Agent(name="CTO", model=Config.LLM_MODEL, instructions=prompt_data["instructions"])
+
+
+def create_coo() -> Agent:
+    """COO — WBS / critical path / portfolio risk."""
+    prompt_data = Config.get_staff_prompt("coo")
+    return Agent(name="COO", model=Config.LLM_MODEL, instructions=prompt_data["instructions"])
+
+
+def create_hr_director() -> Agent:
+    """HR Director — staffing / capacity / hiring impact."""
+    prompt_data = Config.get_staff_prompt("hr_director")
+    return Agent(name="HRDirector", model=Config.LLM_MODEL, instructions=prompt_data["instructions"])
+
+
+def create_product_director() -> Agent:
+    """Product Director — JTBD / MVP scope / roadmap."""
+    prompt_data = Config.get_staff_prompt("product_director")
+    return Agent(name="ProductDirector", model=Config.LLM_MODEL, instructions=prompt_data["instructions"])
